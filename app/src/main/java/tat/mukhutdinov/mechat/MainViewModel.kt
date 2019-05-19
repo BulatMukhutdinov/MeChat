@@ -6,6 +6,7 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.google.firebase.firestore.FirebaseFirestore
 import tat.mukhutdinov.mechat.model.TextMessage
+import tat.mukhutdinov.mechat.repo.MessagesBoundaryRepo
 import timber.log.Timber
 
 class MainViewModel : ViewModel() {
@@ -22,6 +23,8 @@ class MainViewModel : ViewModel() {
     val messages: LiveData<PagedList<TextMessage>> =
         LivePagedListBuilder<TextMessage, TextMessage>(dataSourceFactory, config).build()
 
+    val repo = MessagesBoundaryRepo()
+
     init {
         FirebaseFirestore.getInstance().collection("message")
             .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
@@ -36,4 +39,7 @@ class MainViewModel : ViewModel() {
             }
     }
 
+    fun onTextSend(text: String) {
+        repo.sendText(text)
+    }
 }

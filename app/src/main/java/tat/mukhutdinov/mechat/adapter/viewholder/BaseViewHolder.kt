@@ -9,7 +9,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.recyclerview.widget.RecyclerView
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.db.MessageEntity
 
 open class BaseViewHolder(
     view: View,
@@ -24,7 +24,7 @@ open class BaseViewHolder(
         this(LayoutInflater.from(parent.context).inflate(layoutId, parent, false), clickListener)
 
     @CallSuper
-    open fun bindTo(item: Message?) {
+    open fun bindTo(item: MessageEntity?) {
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_START)
 
         clickListener?.let {
