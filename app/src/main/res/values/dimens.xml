@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_half">4dp</dimen>
+    <dimen name="size1x">8dp</dimen>
+    <dimen name="size2x">16dp</dimen>
+    <dimen name="size4x">32dp</dimen>
+    <dimen name="size5x">40dp</dimen>
+    <dimen name="size15x">120dp</dimen>
+
+    <dimen name="text_medium">16sp</dimen>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size1x"
+        android:background="@null"
+        android:hint="@string/message_box_message"
+        android:maxHeight="@dimen/size15x"
+        android:paddingStart="@dimen/size1x"
+        android:paddingTop="@dimen/size2x"
+        android:paddingBottom="@dimen/size2x"
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorAccent"
+        android:textCursorDrawable="@drawable/cursor"
+        android:theme="@style/ChatBoxPointer"
+        app:layout_constraintEnd_toStartOf="@id/action"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size1x"
+        android:background="@null"
+        android:padding="@dimen/size1x"
+        android:src="@drawable/ic_send"
+        android:tint="@color/indigoLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
