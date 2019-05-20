@@ -1,12 +1,15 @@
 package tat.mukhutdinov.mechat.repo
 
+import android.net.Uri
+import androidx.lifecycle.LiveData
+import androidx.paging.PagedList
+import tat.mukhutdinov.mechat.model.Message
+
 interface MessagesRepo {
-//    fun getPaged(): Listing<Message>
+
+    fun getMessages(): LiveData<PagedList<Message>>
 
     fun sendText(text: String)
 
-    companion object {
-        const val COLLECTION_PATH = "message"
-        const val ORDER_BY_FIELD = "timestamp"
-    }
+    fun sendImage(uri: Uri)
 }

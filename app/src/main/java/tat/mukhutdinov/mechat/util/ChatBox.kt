@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat
+package tat.mukhutdinov.mechat.util
 
 import android.content.Context
 import android.text.Editable
@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.chat_box.view.image
 import kotlinx.android.synthetic.main.chat_box.view.location
 import kotlinx.android.synthetic.main.chat_box.view.send
 import kotlinx.android.synthetic.main.chat_box.view.text
+import tat.mukhutdinov.mechat.R
 
 class ChatBox(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
@@ -21,9 +22,11 @@ class ChatBox(context: Context, attrs: AttributeSet?) : ConstraintLayout(context
 
         text.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
+                // no-op
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // no-op
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {

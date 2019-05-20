@@ -1,11 +1,10 @@
-package tat.mukhutdinov.mechat.adapter
+package tat.mukhutdinov.mechat.ui.adapter
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
-import tat.mukhutdinov.mechat.db.MessageEntity
-import tat.mukhutdinov.mechat.model.TextMessage
+import tat.mukhutdinov.mechat.model.Message
 
-class DiffUtilItemCallback<T : TextMessage> : DiffUtil.ItemCallback<T>() {
+class DiffUtilItemCallback<T : Message> : DiffUtil.ItemCallback<T>() {
 
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean =
         oldItem.id == newItem.id

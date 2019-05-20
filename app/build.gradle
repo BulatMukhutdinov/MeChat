@@ -56,7 +56,13 @@ dependencies {
     implementation "androidx.room:room-rxjava2:2.1.0-beta01"
     kapt "androidx.room:room-compiler:2.1.0-beta01"
 
-    implementation 'com.firebaseui:firebase-ui-firestore:4.3.2'
+    implementation 'com.google.firebase:firebase-firestore:19.0.0'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
+
+    implementation "org.koin:koin-android:2.0.0-GA6"
+    implementation "org.koin:koin-android-viewmodel:2.0.0-GA6"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.12'
 
