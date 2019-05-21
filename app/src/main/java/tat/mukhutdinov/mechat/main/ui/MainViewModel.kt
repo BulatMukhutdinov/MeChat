@@ -1,11 +1,11 @@
-package tat.mukhutdinov.mechat.ui
+package tat.mukhutdinov.mechat.main.ui
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
-import tat.mukhutdinov.mechat.model.Message
-import tat.mukhutdinov.mechat.repo.MessagesRepo
+import tat.mukhutdinov.mechat.main.model.Message
+import tat.mukhutdinov.mechat.main.repo.MessagesRepo
 
 class MainViewModel(private val messagesRepo: MessagesRepo) : ViewModel() {
 

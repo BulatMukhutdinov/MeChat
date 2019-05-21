@@ -1,9 +1,9 @@
-package tat.mukhutdinov.mechat.repo
+package tat.mukhutdinov.mechat.main.repo
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.main.model.Message
 
 interface MessagesRepo {
 

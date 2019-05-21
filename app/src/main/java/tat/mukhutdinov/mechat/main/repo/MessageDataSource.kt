@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.repo
+package tat.mukhutdinov.mechat.main.repo
 
 import androidx.paging.ItemKeyedDataSource
 import com.google.android.gms.tasks.Tasks
@@ -6,13 +6,13 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
-import tat.mukhutdinov.mechat.model.FIELD_IMAGE
-import tat.mukhutdinov.mechat.model.FIELD_LOCATION
-import tat.mukhutdinov.mechat.model.FIELD_TEXT
-import tat.mukhutdinov.mechat.model.FIELD_TIMESTAMP
-import tat.mukhutdinov.mechat.model.GLOBAL_PATH
-import tat.mukhutdinov.mechat.model.MESSAGE_PATH
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.main.model.FIELD_IMAGE
+import tat.mukhutdinov.mechat.main.model.FIELD_LOCATION
+import tat.mukhutdinov.mechat.main.model.FIELD_TEXT
+import tat.mukhutdinov.mechat.main.model.FIELD_TIMESTAMP
+import tat.mukhutdinov.mechat.main.model.GLOBAL_PATH
+import tat.mukhutdinov.mechat.main.model.MESSAGE_PATH
+import tat.mukhutdinov.mechat.main.model.Message
 
 class MessageDataSource(private val user: FirebaseUser) : ItemKeyedDataSource<Message, Message>() {
 

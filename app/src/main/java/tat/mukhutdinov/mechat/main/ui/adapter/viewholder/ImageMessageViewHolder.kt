@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.ui.adapter.viewholder
+package tat.mukhutdinov.mechat.main.ui.adapter.viewholder
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.image_item.view.image
 import tat.mukhutdinov.mechat.R
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.main.model.Message
 
 class ImageMessageViewHolder(private val parent: View) : RecyclerView.ViewHolder(parent) {
 

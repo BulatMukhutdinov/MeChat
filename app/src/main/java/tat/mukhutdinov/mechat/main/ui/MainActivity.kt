@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.ui
+package tat.mukhutdinov.mechat.main.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -9,6 +9,7 @@ import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.View.GONE
 import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
 import androidx.appcompat.app.AppCompatActivity
@@ -20,12 +21,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.activity_main.chatBox
+import kotlinx.android.synthetic.main.activity_main.loading
 import kotlinx.android.synthetic.main.activity_main.messages
 import kotlinx.android.synthetic.main.chat_box.image
 import kotlinx.android.synthetic.main.chat_box.location
 import org.koin.android.viewmodel.ext.android.viewModel
 import tat.mukhutdinov.mechat.R
-import tat.mukhutdinov.mechat.ui.adapter.MessagesAdapter
+import tat.mukhutdinov.mechat.main.ui.adapter.MessagesAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,11 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         location.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                ) == PackageManager.PERMISSION_GRANTED
-            ) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 sendLocation()
             } else {
                 ActivityCompat.requestPermissions(
@@ -103,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         messages.adapter = adapter
 
         viewModel.messages.observe(this, Observer {
+            loading.visibility = GONE
             adapter.submitList(it)
         })
 

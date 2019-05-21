@@ -1,12 +1,12 @@
-package tat.mukhutdinov.mechat.ui.adapter
+package tat.mukhutdinov.mechat.main.ui.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import tat.mukhutdinov.mechat.R
-import tat.mukhutdinov.mechat.model.Message
-import tat.mukhutdinov.mechat.ui.adapter.viewholder.ImageMessageViewHolder
-import tat.mukhutdinov.mechat.ui.adapter.viewholder.TextMessageViewHolder
+import tat.mukhutdinov.mechat.main.model.Message
+import tat.mukhutdinov.mechat.main.ui.adapter.viewholder.ImageMessageViewHolder
+import tat.mukhutdinov.mechat.main.ui.adapter.viewholder.TextMessageViewHolder
 
 class MessagesAdapter : PagedListAdapter<Message, RecyclerView.ViewHolder>(DiffUtilItemCallback<Message>()) {
 

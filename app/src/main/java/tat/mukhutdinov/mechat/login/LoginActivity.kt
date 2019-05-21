@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat
+package tat.mukhutdinov.mechat.login
 
 import android.app.Activity
 import android.content.DialogInterface
@@ -7,7 +7,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
-import tat.mukhutdinov.mechat.ui.MainActivity
+import tat.mukhutdinov.mechat.R
+import tat.mukhutdinov.mechat.main.ui.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 

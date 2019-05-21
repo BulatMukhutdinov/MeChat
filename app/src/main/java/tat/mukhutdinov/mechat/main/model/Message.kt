@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.model
+package tat.mukhutdinov.mechat.main.model
 
 data class Message(val id: String, val timestamp: Long, val text: String?, val image: String?, val location: String?)
 

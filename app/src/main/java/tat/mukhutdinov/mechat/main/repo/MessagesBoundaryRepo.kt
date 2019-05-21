@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.repo
+package tat.mukhutdinov.mechat.main.repo
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
@@ -9,13 +9,13 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageMetadata
-import tat.mukhutdinov.mechat.model.FIELD_IMAGE
-import tat.mukhutdinov.mechat.model.FIELD_LOCATION
-import tat.mukhutdinov.mechat.model.FIELD_TEXT
-import tat.mukhutdinov.mechat.model.FIELD_TIMESTAMP
-import tat.mukhutdinov.mechat.model.GLOBAL_PATH
-import tat.mukhutdinov.mechat.model.MESSAGE_PATH
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.main.model.FIELD_IMAGE
+import tat.mukhutdinov.mechat.main.model.FIELD_LOCATION
+import tat.mukhutdinov.mechat.main.model.FIELD_TEXT
+import tat.mukhutdinov.mechat.main.model.FIELD_TIMESTAMP
+import tat.mukhutdinov.mechat.main.model.GLOBAL_PATH
+import tat.mukhutdinov.mechat.main.model.MESSAGE_PATH
+import tat.mukhutdinov.mechat.main.model.Message
 import timber.log.Timber
 
 class MessagesBoundaryRepo(private val user: FirebaseUser) : MessagesRepo {

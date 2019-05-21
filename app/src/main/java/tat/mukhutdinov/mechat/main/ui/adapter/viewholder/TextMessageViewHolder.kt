@@ -1,4 +1,4 @@
-package tat.mukhutdinov.mechat.ui.adapter.viewholder
+package tat.mukhutdinov.mechat.main.ui.adapter.viewholder
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.text_item.view.text
 import tat.mukhutdinov.mechat.R
-import tat.mukhutdinov.mechat.model.Message
+import tat.mukhutdinov.mechat.main.model.Message
 
 class TextMessageViewHolder(parent: View) : RecyclerView.ViewHolder(parent) {
 

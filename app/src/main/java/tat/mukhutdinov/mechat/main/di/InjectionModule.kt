@@ -1,11 +1,11 @@
-package tat.mukhutdinov.mechat.di
+package tat.mukhutdinov.mechat.main.di
 
 import com.google.firebase.auth.FirebaseAuth
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import tat.mukhutdinov.mechat.repo.MessagesBoundaryRepo
-import tat.mukhutdinov.mechat.repo.MessagesRepo
-import tat.mukhutdinov.mechat.ui.MainViewModel
+import tat.mukhutdinov.mechat.main.repo.MessagesBoundaryRepo
+import tat.mukhutdinov.mechat.main.repo.MessagesRepo
+import tat.mukhutdinov.mechat.main.ui.MainViewModel
 import java.lang.RuntimeException
 
 object InjectionModule {

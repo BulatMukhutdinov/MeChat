@@ -3,7 +3,7 @@ package tat.mukhutdinov.mechat
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import tat.mukhutdinov.mechat.di.InjectionModule
+import tat.mukhutdinov.mechat.main.di.InjectionModule
 import timber.log.Timber
 
 class App : Application() {
