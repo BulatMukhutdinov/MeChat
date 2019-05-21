@@ -54,6 +54,7 @@ class MessagesBoundaryRepo(private val user: FirebaseUser) : MessagesRepo {
 
     override fun sendLocation(latitude: Double, longitude: Double, scale: Int) {
         val message = HashMap<String, Any>()
+        // in real apps *DON"T* store keys open
         message[FIELD_LOCATION] = "https://maps.googleapis.com/maps/api/staticmap?size=240x160&zoom=15&scale=$scale)}&markers=size:small|color:0x57BEED|$latitude,$longitude&key=AIzaSyBcjGN3lHSUEynSRqwi_UF_dGDbIUhzMrM"
 
         send(message)
