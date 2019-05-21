@@ -2,23 +2,25 @@ package tat.mukhutdinov.mechat.repo
 
 import androidx.paging.ItemKeyedDataSource
 import com.google.android.gms.tasks.Tasks
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
-import tat.mukhutdinov.mechat.model.COLLECTION_PATH
 import tat.mukhutdinov.mechat.model.FIELD_IMAGE
 import tat.mukhutdinov.mechat.model.FIELD_LOCATION
 import tat.mukhutdinov.mechat.model.FIELD_TEXT
 import tat.mukhutdinov.mechat.model.FIELD_TIMESTAMP
+import tat.mukhutdinov.mechat.model.GLOBAL_PATH
+import tat.mukhutdinov.mechat.model.MESSAGE_PATH
 import tat.mukhutdinov.mechat.model.Message
 
-class MessageDataSource : ItemKeyedDataSource<Message, Message>() {
+class MessageDataSource(private val user: FirebaseUser) : ItemKeyedDataSource<Message, Message>() {
 
     private lateinit var lastPage: Query
 
     override fun loadInitial(params: LoadInitialParams<Message>, callback: LoadInitialCallback<Message>) {
         lastPage = FirebaseFirestore.getInstance()
-            .collection(COLLECTION_PATH)
+            .collection(GLOBAL_PATH).document(user.uid).collection(MESSAGE_PATH)
             .orderBy(FIELD_TIMESTAMP, Query.Direction.DESCENDING)
             .limit(params.requestedLoadSize.toLong())
 
@@ -33,7 +35,7 @@ class MessageDataSource : ItemKeyedDataSource<Message, Message>() {
         val lastVisible = lastQuerySnapshot.documents[lastQuerySnapshot.size() - 1]
 
         lastPage = FirebaseFirestore.getInstance()
-            .collection(COLLECTION_PATH)
+            .collection(GLOBAL_PATH).document(user.uid).collection(MESSAGE_PATH)
             .orderBy(FIELD_TIMESTAMP, Query.Direction.DESCENDING)
             .startAfter(lastVisible)
             .limit(params.requestedLoadSize.toLong())

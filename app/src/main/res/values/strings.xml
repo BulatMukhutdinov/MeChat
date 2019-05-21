@@ -4,4 +4,7 @@
     <string name="message_box_message">Сообщение</string>
     <string name="retry">Повторить</string>
     <string name="failed_to_get_location">Не удалось получить текущую локацию ¯\_(ツ)_/¯</string>
+
+    <string name="auth_required">Чтобы пользоваться приложением необходимо войти в гугл аккаунт</string>
+    <string name="location_required">Не удалось отправить местоположение</string>
 </resources>

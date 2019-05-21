@@ -66,10 +66,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         location.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
                 sendLocation()
             } else {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_REQUEST_CODE)
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+                    LOCATION_REQUEST_CODE
+                )
             }
         }
     }
@@ -112,7 +120,7 @@ class MainActivity : AppCompatActivity() {
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 sendLocation()
             } else {
-                // Permission was denied. Display an error message.
+                Toast.makeText(this, R.string.location_required, LENGTH_LONG).show()
             }
         }
     }
