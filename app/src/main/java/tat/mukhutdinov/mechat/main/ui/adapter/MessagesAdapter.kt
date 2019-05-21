@@ -8,7 +8,7 @@ import tat.mukhutdinov.mechat.main.model.Message
 import tat.mukhutdinov.mechat.main.ui.adapter.viewholder.ImageMessageViewHolder
 import tat.mukhutdinov.mechat.main.ui.adapter.viewholder.TextMessageViewHolder
 
-class MessagesAdapter : PagedListAdapter<Message, RecyclerView.ViewHolder>(DiffUtilItemCallback<Message>()) {
+class MessagesAdapter : PagedListAdapter<Message, RecyclerView.ViewHolder>(DiffUtilItemCallback()) {
 
     init {
         setHasStableIds(true)
