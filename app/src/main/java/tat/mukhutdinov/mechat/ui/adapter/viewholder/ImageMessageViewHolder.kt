@@ -3,24 +3,33 @@ package tat.mukhutdinov.mechat.ui.adapter.viewholder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.image_item.view.image
 import tat.mukhutdinov.mechat.R
 import tat.mukhutdinov.mechat.model.Message
 
-class ImageMessageViewHolder(parent: View) : RecyclerView.ViewHolder(parent) {
+class ImageMessageViewHolder(private val parent: View) : RecyclerView.ViewHolder(parent) {
 
     private val image = itemView.image
 
     fun bindTo(item: Message?) {
         image.clipToOutline = true
 
-        if (item?.image?.isNotEmpty() == true) {
+        val path = when {
+            item?.image?.isNotEmpty() == true -> item.image
+            item?.location?.isNotEmpty() == true -> item.location
+            else -> null
+        }
+
+        if (path != null) {
             Picasso.get()
-                .load(item.image)
+                .load(path)
                 .placeholder(R.drawable.ic_loading)
                 .into(image)
+        } else {
+            image.setImageDrawable(ContextCompat.getDrawable(parent.context, R.drawable.ic_loading))
         }
     }
 

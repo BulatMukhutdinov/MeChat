@@ -3,4 +3,5 @@
 
     <string name="message_box_message">Сообщение</string>
     <string name="retry">Повторить</string>
+    <string name="failed_to_get_location">Не удалось получить текущую локацию ¯\_(ツ)_/¯</string>
 </resources>

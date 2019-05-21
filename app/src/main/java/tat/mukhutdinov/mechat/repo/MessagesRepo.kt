@@ -12,4 +12,6 @@ interface MessagesRepo {
     fun sendText(text: String)
 
     fun sendImage(uri: Uri)
+
+    fun sendLocation(latitude: Double, longitude: Double, scale: Int)
 }

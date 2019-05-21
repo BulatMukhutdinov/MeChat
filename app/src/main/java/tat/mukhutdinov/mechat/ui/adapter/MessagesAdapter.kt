@@ -32,7 +32,7 @@ class MessagesAdapter : PagedListAdapter<Message, RecyclerView.ViewHolder>(DiffU
     override fun getItemViewType(position: Int): Int {
         val item = getItem(position) ?: return 0
 
-        return if (item.image != null) {
+        return if (item.image != null || item.location != null) {
             R.layout.image_item
         } else {
             R.layout.text_item

@@ -10,6 +10,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageMetadata
 import tat.mukhutdinov.mechat.model.COLLECTION_PATH
 import tat.mukhutdinov.mechat.model.FIELD_IMAGE
+import tat.mukhutdinov.mechat.model.FIELD_LOCATION
 import tat.mukhutdinov.mechat.model.FIELD_TEXT
 import tat.mukhutdinov.mechat.model.FIELD_TIMESTAMP
 import tat.mukhutdinov.mechat.model.Message
@@ -50,11 +51,30 @@ class MessagesBoundaryRepo : MessagesRepo {
     override fun getMessages(): LiveData<PagedList<Message>> =
         LivePagedListBuilder<Message, Message>(dataSourceFactory, config).build()
 
+    override fun sendLocation(latitude: Double, longitude: Double, scale: Int) {
+        val message = HashMap<String, Any>()
+        message[FIELD_LOCATION] = "https://maps.googleapis.com/maps/api/staticmap?size=240x160&zoom=15&scale=$scale)}&markers=size:small|color:0x57BEED|$latitude,$longitude&key=AIzaSyBcjGN3lHSUEynSRqwi_UF_dGDbIUhzMrM"
+
+        send(message)
+    }
+
     override fun sendText(text: String) {
         val message = HashMap<String, Any>()
         message[FIELD_TEXT] = text
 
         send(message)
+    }
+
+    private fun send(message: HashMap<String, Any>) {
+        message[FIELD_TIMESTAMP] = System.currentTimeMillis()
+
+        FirebaseFirestore.getInstance().collection(COLLECTION_PATH)
+            .add(message)
+            .addOnSuccessListener {
+
+                Timber.d("New message: $message")
+            }
+            .addOnFailureListener { Timber.e(it) }
     }
 
     override fun sendImage(uri: Uri) {
@@ -95,18 +115,6 @@ class MessagesBoundaryRepo : MessagesRepo {
                         .addOnSuccessListener { Timber.d("New message: $updated") }
                         .addOnFailureListener { Timber.e(it) }
                 }
-            }
-            .addOnFailureListener { Timber.e(it) }
-    }
-
-    private fun send(message: HashMap<String, Any>) {
-        message[FIELD_TIMESTAMP] = System.currentTimeMillis()
-
-        FirebaseFirestore.getInstance().collection(COLLECTION_PATH)
-            .add(message)
-            .addOnSuccessListener {
-
-                Timber.d("New message: $message")
             }
             .addOnFailureListener { Timber.e(it) }
     }

@@ -18,4 +18,8 @@ class MainViewModel(private val messagesRepo: MessagesRepo) : ViewModel() {
     fun sendImage(uri: Uri) {
         messagesRepo.sendImage(uri)
     }
+
+    fun sendLocation(latitude: Double, longitude: Double, scale: Int) {
+        messagesRepo.sendLocation(latitude, longitude, scale)
+    }
 }

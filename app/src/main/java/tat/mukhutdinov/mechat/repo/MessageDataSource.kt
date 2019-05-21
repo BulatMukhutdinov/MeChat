@@ -7,6 +7,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import tat.mukhutdinov.mechat.model.COLLECTION_PATH
 import tat.mukhutdinov.mechat.model.FIELD_IMAGE
+import tat.mukhutdinov.mechat.model.FIELD_LOCATION
 import tat.mukhutdinov.mechat.model.FIELD_TEXT
 import tat.mukhutdinov.mechat.model.FIELD_TIMESTAMP
 import tat.mukhutdinov.mechat.model.Message
@@ -59,7 +60,8 @@ class MessageDataSource : ItemKeyedDataSource<Message, Message>() {
                     id = document.id,
                     timestamp = document.data[FIELD_TIMESTAMP] as Long,
                     text = document.data[FIELD_TEXT] as String?,
-                    image = document.data[FIELD_IMAGE] as String?)
+                    image = document.data[FIELD_IMAGE] as String?,
+                    location = document.data[FIELD_LOCATION] as String?)
             )
         }
 
