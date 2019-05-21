@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "855563109682-a8nn9s3c6btov1c4f11qsn5lhvai1a8g.apps.googleusercontent.com",
+          "client_id": "855563109682-n9rcf1to9i6dk82a3n1fe72mr5f5ka74.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "tat.mukhutdinov.mechat",
@@ -29,7 +29,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBcjGN3lHSUEynSRqwi_UF_dGDbIUhzMrM"
+          "current_key": "AIzaSyAmUjYlMdixLsYW9S7GIa7t-aoB55uplyw"
         }
       ],
       "services": {
